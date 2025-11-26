@@ -70,4 +70,15 @@ npm run watch
 
 Your GitHub session cookie is stored locally in VS Code settings and is only used to fetch usage data from `https://github.com/github-copilot/chat/entitlement`. No data is sent to third parties.
 
+## Contributing
+
+Contributions are welcome! Feel free to:
+- Open issues for bugs or feature requests
+- Submit pull requests with improvements
+- Join the [Discussions](https://github.com/DiabloPower/vscode-copilot-status/discussions) to share ideas
+
+## License
+
+Licensed under [CC BY-NC 4.0](./LICENSE) - free for non-commercial use.
+
 MIT
