@@ -1,0 +1,68 @@
+{
+  "name": "copilot-usage-widget",
+  "displayName": "Copilot Usage Widget",
+  "description": "Displays GitHub Copilot usage statistics in the status bar",
+  "version": "0.0.1",
+  "publisher": "your-publisher-name",
+  "engines": {
+    "vscode": "^1.85.0"
+  },
+  "categories": [
+    "Other"
+  ],
+  "activationEvents": [
+    "onStartupFinished"
+  ],
+  "main": "./out/extension.js",
+  "contributes": {
+    "commands": [
+      {
+        "command": "copilotUsage.openDashboard",
+        "title": "Open Copilot Usage Dashboard"
+      },
+      {
+        "command": "copilotUsage.refresh",
+        "title": "Refresh Copilot Usage"
+      },
+      {
+        "command": "copilotUsage.setupCookie",
+        "title": "Setup Copilot Cookie Authentication"
+      }
+    ],
+    "configuration": {
+      "title": "Copilot Usage Widget",
+      "properties": {
+        "copilotUsage.githubSessionCookie": {
+          "type": "string",
+          "default": "",
+          "description": "GitHub session cookie (user_session=...) for fetching usage data. Get it from browser DevTools."
+        },
+        "copilotUsage.refreshIntervalSeconds": {
+          "type": "number",
+          "default": 60,
+          "minimum": 10,
+          "maximum": 3600,
+          "description": "Interval in seconds to automatically refresh usage data (10-3600 seconds, default: 60)"
+        }
+      }
+    }
+  },
+  "scripts": {
+    "vscode:prepublish": "node node_modules/typescript/bin/tsc -p .",
+    "compile": "node node_modules/typescript/bin/tsc -p .",
+    "watch": "node node_modules/typescript/bin/tsc -watch -p .",
+    "pretest": "npm run compile && npm run lint",
+    "lint": "eslint src --ext ts"
+  },
+  "devDependencies": {
+    "@types/node": "18.x",
+    "@types/vscode": "^1.85.0",
+    "@typescript-eslint/eslint-plugin": "^6.15.0",
+    "@typescript-eslint/parser": "^6.15.0",
+    "eslint": "^8.56.0",
+    "typescript": "^5.3.3"
+  },
+  "dependencies": {
+    "node-fetch": "^2.7.0"
+  }
+}
